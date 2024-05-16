@@ -1,7 +1,7 @@
 # WingMan ✈️
 
-<div style="width: 100%; width: 300px; height: 210px; text-align: center;">
-    <img src="https://www.diesel-plus.com/wp-content/uploads/2019/07/Airplane-Sky-201811-001-720x475.jpg" alt="Screenshot of the airplane" style="max-width: 100%; border: none;">
+<div style="text-align:left">
+    <img src="https://www.diesel-plus.com/wp-content/uploads/2019/07/Airplane-Sky-201811-001-720x475.jpg" alt="Screenshot of the airplane" style="width: 300px; height:200px;">
   </div>
   
   <div style="padding-top: 20px;">
