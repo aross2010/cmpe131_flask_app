@@ -1,24 +1,13 @@
 # WingMan ✈️
 
-<table>
-<tr>
-
-<td>
-
-WingMan is a simple Flask application that provides a flight booking interface where users can search and book flights by entering the departure and destination cities, as well as the departure date. The application will then display a list of available flights that match the search criteria where users can see extensive information about each flight, including the flight number, departure and arrival times, aircraft model, and the price. Once booked the user will be able to see their booked flights and live updates on the flight information as well as edit or cancel the booking if needed.
-
-</td>
-
-<td>
-
-**Screenshot**
-
-![Screenshot of the airplane](https://www.diesel-plus.com/wp-content/uploads/2019/07/Airplane-Sky-201811-001-720x475.jpg)
-
-</td>
-
-</tr>
-</table>
+<div style="display: flex; align-items: center;">
+  <div style="flex: 1; padding-right: 20px;">
+    WingMan is a simple Flask application that provides a flight booking interface where users can search and book flights by entering the departure and destination cities, as well as the departure date. The application will then display a list of available flights that match the search criteria where users can see extensive information about each flight, including the flight number, departure and arrival times, aircraft model, and the price. Once booked the user will be able to see their booked flights and live updates on the flight information as well as edit or cancel the booking if needed.
+  </div>
+  <div style="flex: 2; text-align: center;">
+    <img src="https://www.diesel-plus.com/wp-content/uploads/2019/07/Airplane-Sky-201811-001-720x475.jpg" alt="Screenshot of the airplane" style="max-width: 100%; border: none;">
+  </div>
+</div>
 
 ## ⚠️ Prerequisites
 
