@@ -58,10 +58,7 @@
 				<li style="margin-bottom: 20px">
 					Flight from {{ flight.origin }} to {{ flight.destination }} with {{
 					flight.airline }} on {{ flight.originDate }}.<br />
-					Original Price: ${{ flight.price }}<br />
-					Discount: {{ flight.discount }}%<br />
-					Discounted Price: ${{ '{:.2f}'.format(flight.price * (1 -
-					flight.discount / 100)) }}
+					Price: ${{ flight.price }}<br />
 				</li>
 				{% endfor %}
 			</ul>

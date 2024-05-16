@@ -7,7 +7,7 @@ from app.models import Flight
 
 @app.route('/')
 def home():
-    discounted_flights = Flight.query.filter(Flight.discount.isnot(None)).limit(10).all()
+    discounted_flights = Flight.query.filter(Flight.price < 150).limit(10).all()
     return render_template('home.html', discounted_flights=discounted_flights)
 
 @app.route('/results')

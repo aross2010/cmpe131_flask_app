@@ -13,5 +13,4 @@ class Flight(db.Model):
         price = db.Column(db.Integer)
         airline = db.Column(db.String(50), nullable=False)
         id = db.Column(db.Integer, primary_key=True)
-        discount = db.Column(Numeric(10, 2))
 
