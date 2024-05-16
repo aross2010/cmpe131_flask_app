@@ -115,4 +115,8 @@ Open a web browser and go to http://127.0.0.1:5000/ or http://localhost:5000
 
 ### 5. Display the aircraft model for each flight in the results. - Alex Ross
 
+<<<<<<< HEAD
 ### 6. Display different classes of flights for each flight in the results. -Lyxa Tang
+=======
+### 6. Display different classes of flights for each flight in the results. -Lyxa Tang
+>>>>>>> 3202807 (update README)
