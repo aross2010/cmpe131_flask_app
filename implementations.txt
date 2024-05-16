@@ -1,0 +1,6 @@
+1. Search for flights by origin/destination and dates
+2. Sort the flight results by price and time of flight
+3. Filter the flight search by airline
+4. Display front page deals for the cheapest flights
+5. Display the aircraft model for each flight in the results
+6. Display different classes of flights for each flight in the results
