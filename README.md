@@ -102,3 +102,17 @@ Open a web browser and go to http://127.0.0.1:5000/ or http://localhost:5000
 | Alex Ross      | 016812393 | alex.ross@sjsu.edu      | [aross2010](https://github.com/aross2010)           |
 | Zhirong Chen   | 017274920 | zhirong.chen@sjsu.edu   | [zchen2003](https://github.com/zchen2003)           |
 | Lyxa Tang      | 017541901 | lyxa.tang@sjsu.edu      | [lyxa123](https://github.com/lyxa123)               |
+
+## Implementations
+
+### 1. Search for flights by origin/destination and dates. - Alex Ross
+
+### 2. Sort the flight results by price and time of flight. - Zhiron Chen
+
+### 3. Filter the flight search by airline. - Zhiron Chen
+
+### 4. Display front page deals for the cheapest flights. - Jordan Jimenez
+
+### 5. Display the aircraft model for each flight in the results. - Alex Ross
+
+### 6. Display different classes of flights for each flight in the results. -Lyxa Tang
