@@ -28,16 +28,14 @@ python3 -m venv venv
 
 4. Activate the virtual environment:
 
-````
+```
 source venv/bin/activate
-```$
+```
 
 5. Install the required Python packages:
 
-````
-
+```
 pip install -r requirements.txt
-
 ```
 
 6. Set Up the Database
@@ -45,18 +43,13 @@ pip install -r requirements.txt
 Run the seeds.py script to populate the database with initial data:
 
 ```
-
 python seeds.py
-
 ```
 
 7. Run the application:
 
 ```
-
 flask run
-
 ```
 
-8. Open a web browser and go to http://
-```
+8. Open a web browser and go to http://localhost:5000 to view the application.
