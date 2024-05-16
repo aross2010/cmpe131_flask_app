@@ -8,6 +8,9 @@ app/app.db
 __pycache__/
 *.py[cod]
 
+app/__pycache__/
+app/*.py[cod]
+
 # Database files
 *.db
 
