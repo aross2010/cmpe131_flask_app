@@ -87,5 +87,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-    # 12-12 12-18
-    # DFW -> JFK
+# JFK -> LAX 12-12 to 12-22

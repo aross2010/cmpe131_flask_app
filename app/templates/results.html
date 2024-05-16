@@ -12,6 +12,7 @@
 <button id="sort-by-price">Sort by Price <span class="arrow">&#x21C5;</span></button>
 <button id="sort-by-time">Sort by Time <span class="arrow">&#x21C5;</span></button>
 
+
     <ul>
       {% for flight in flights %}
         <h3>
@@ -40,7 +41,11 @@
         <p>
           {{flight.model[1]}}
         </p>
+        <button>
+          Book Now
+        </button>
         <br/>
+       
         
       {% endfor %}
     </ul>

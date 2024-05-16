@@ -30,11 +30,7 @@ def results():
     departure_flights = Flight.query.filter_by(origin=origin, destination=destination, originDate=departure,airline=airline).all()
     return_flights = Flight.query.filter_by(origin=destination, destination=origin, originDate=return_date,airline=airline).all()
 
-    departure_flights_data = [flight.__dict__ for flight in departure_flights]
-    return_flights_data = [flight.__dict__ for flight in return_flights]
-
     paired_flight_data_list = []
-
 
     for departure_flight in departure_flights:
         for return_flight in return_flights:
@@ -65,4 +61,3 @@ def results():
             paired_flight_data_list = sorted(paired_flight_data_list,
                                              key=lambda x: (-parse_departure(x['originTakeoff'])))
     return render_template('results.html', flights=paired_flight_data_list, origin=origin, destination=destination, departure=departure, return_date=return_date)
-
