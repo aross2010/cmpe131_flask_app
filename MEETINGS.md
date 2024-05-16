@@ -21,3 +21,14 @@
   - Zhirong began working on sorting and filtering algorithm based on db models. Will continue to work on this next and implement html for this functionality.
 - Summarize group progress:
   - So far we have shared the repository and created basic db models. We have also begun working on the implementation of the requirements and have finished the ethical implications paper. We will continue to work on the implementation of the requirements in html and the db models.
+
+### 2024-05-17 at 3:00
+
+- Jordan Jimenez, Lyxa Tang, Alex Ross, Zhirong Chen
+- Team updates:
+  - Alex checked in regarding his completion of search functionality and populating flights into the db. Helped Lyxa and Zhirong with db and integration into results page from search. Will work on finishing contribution part of the milestone 2 project.
+  - Jordan finished flight deals section as well as README.md with information regarding running the project and installation instructions. Also helped to organize and arrange commits. Will work on contribution part of the milestone 2 project next.
+  - Lyxa finished the aircraft model attribute and classes for model for their requirement, and also made html and css improvements to the search results page. Worked with Zhirong in merging commits. Will work on contribution part of the milestone 2 project next.
+  - Zhirong finished sorting and filtering algorithm based on newly updated db models and routes and integrated it into the search results page. Worked with Lyxa in merging commits. Will work on contribution part of the milestone 2 project next.
+- Summarize group progress:
+  - We have completed the search functionality and populating flights into the db. We have also finished the flight deals section and the aircraft model attribute and classes for model. We have also finished the sorting and filtering algorithm based on the db models. This accomplishes completing 6 functional requirements for the application. We also made sure we had organized commits and an easy to read README so that others can use our application as well. We will continue to work on the contribution part of the milestone 2 project next.
