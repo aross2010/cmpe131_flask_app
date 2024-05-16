@@ -4,20 +4,24 @@ CMPE 131 Group Project
 
 ## Team Members
 
-| name           | SJSU ID   | SJSU Email              | Github         |
-| -------------- | --------- | ----------------------- | -------------- |
-| Jordan Jimenez | 017511767 | jordan.jimenez@sjsu.edu | Jordan-Jimenez |
-| Alex Ross      | 016812393 | alex.ross@sjsu.edu      | aross2010      |
-| Zhirong Chen   | 017274920 | zhirong.chen@sjsu.edu   | zchen2003      |
-| Lyxa Tang      | 017541901 | lyxa.tang@sjsu.edu      | lyxa123        |
+| name           | SJSU ID   | SJSU Email              | Github                                              |
+| -------------- | --------- | ----------------------- | --------------------------------------------------- |
+| Jordan Jimenez | 017511767 | jordan.jimenez@sjsu.edu | [Jordan-Jimenez](https://github.com/Jordan-Jimenez) |
+| Alex Ross      | 016812393 | alex.ross@sjsu.edu      | [aross2010](https://github.com/aross2010)           |
+| Zhirong Chen   | 017274920 | zhirong.chen@sjsu.edu   | [zchen2003](https://github.com/zchen2003)           |
+| Lyxa Tang      | 017541901 | lyxa.tang@sjsu.edu      | [lyxa123](https://github.com/lyxa123)               |
 
 ## Description
 
 This is a simple Flask application that provides a flight book interface where users can book flights. The application allows users to search for flights by entering the departure and destination cities, as well as the departure date. The application will then display a list of available flights that match the search criteria.
 
-## Installation
+## Prerequisites
 
-To run this application, you will need to have Python installed on your computer. You can download Python from the official website: https://www.python.org/. Once you have Python installed, you can follow these steps to run the application:
+To run this application, you will need to have Python installed on your computer. You can download Python from the official website: [python.org](https://www.python.org/).
+
+## Installation Instructions
+
+Follow these steps to set up and run the application:
 
 ### 1. Clone the repository to your local machine:
 
@@ -36,13 +40,13 @@ cd cmpe131_flask_app
 <details>
 <summary><strong>On macOS/Linux</strong></summary>
 
-#### 1. Create a virtual environment:
+#### a. Create a virtual environment:
 
 ```
 python3 -m venv venv
 ```
 
-#### 2. Activate the virtual environment:
+#### b. Activate the virtual environment:
 
 ```
 source venv/bin/activate
@@ -53,13 +57,13 @@ source venv/bin/activate
 <details>
 <summary><strong>On Windows</strong></summary>
 
-#### 1. Create a virtual environment:
+#### a. Create a virtual environment:
 
 ```
 python -m venv venv
 ```
 
-#### 2. Activate the virtual environment:
+#### b. Activate the virtual environment:
 
 ```
 venv\Scripts\activate
@@ -68,6 +72,8 @@ venv\Scripts\activate
 </details>
 
 ### 4. Install the required Python packages:
+
+Install the dependencies listed in the requirements.txt file:
 
 ```
 pip install -r requirements.txt
@@ -82,6 +88,8 @@ python seeds.py
 ```
 
 ### 6. Run the application:
+
+Start the Flask application:
 
 ```
 flask run
