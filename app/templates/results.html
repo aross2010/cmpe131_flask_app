@@ -8,7 +8,10 @@
     <h3>
       {{departure}} to {{return_date}}
     </h3>
-    <br></br>
+<br></br>
+<button id="sort-by-price">Sort by Price <span class="arrow">&#x21C5;</span></button>
+<button id="sort-by-time">Sort by Time <span class="arrow">&#x21C5;</span></button>
+
     <ul>
       {% for flight in flights %}
         <h3>
@@ -43,3 +46,32 @@
     </ul>
   </body>
 </html>
+
+<script>
+
+  var currentParams = new URLSearchParams(window.location.search);
+
+  document.getElementById('sort-by-price').addEventListener('click', function() {
+  currentParams.delete('time_sort');
+    if (currentParams.has('price_sort')) {
+      var currentSort = currentParams.get('price_sort');
+      var newSort = (currentSort === 'price') ? '-price' : 'price';
+      currentParams.set('price_sort', newSort);
+    } else {
+      currentParams.append('price_sort', 'price');
+    }
+    window.location.search = currentParams.toString();
+  });
+
+  document.getElementById('sort-by-time').addEventListener('click', function() {
+    currentParams.delete('price_sort');
+    if (currentParams.has('time_sort')) {
+      var currentSort = currentParams.get('time_sort');
+      var newSort = (currentSort === 'time') ? '-time' : 'time';
+      currentParams.set('time_sort', newSort);
+    } else {
+      currentParams.append('time_sort', 'time');
+    }
+    window.location.search = currentParams.toString();
+  });
+</script>
