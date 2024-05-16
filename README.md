@@ -97,4 +97,4 @@ flask run
 
 ### 7. View the application.
 
-Open a web browser and go to http://localhost:5000
+Open a web browser and go to http://127.0.0.1:5000/ or http://localhost:5000
