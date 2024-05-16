@@ -1,84 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WingMan</title>
-  </head>
-  <body>
-    <h1>WingMan</h1>
-    <form
-      action="/results"
-      method="get"
-    >
-      <label for="origin"> Origin </label>
-      <select id="origin" name="origin">
-        <option value="JFK">JFK</option>
-        <option value="LAX">LAX</option>
-        <option
-          value="SFO"
-          selected
-        >
-          SFO
-        </option>
-        <option value="ORD">ORD</option>
-        <option value="DFW">DFW</option>
-        <option value="MIA">MIA</option>
-      </select>
+	<head>
+		<title>WingMan</title>
+	</head>
+	<body>
+		<h1>WingMan</h1>
+		<form action="/results" method="get">
+			<label for="origin"> Origin </label>
+			<select id="origin" name="origin">
+				<option value="JFK">JFK</option>
+				<option value="LAX">LAX</option>
+				<option value="SFO" selected>SFO</option>
+				<option value="ORD">ORD</option>
+				<option value="DFW">DFW</option>
+				<option value="MIA">MIA</option>
+			</select>
 
-      <label for="destination"> Destination </label>
-      <select id="destination" name="destination">
-        <option
-          value="JFK"
-          selected
-        >
-          JFK
-        </option>
-        <option value="LAX">LAX</option>
-        <option value="SFO">SFO</option>
-        <option value="ORD">ORD</option>
-        <option value="DFW">DFW</option>
-        <option value="MIA">MIA</option>
-      </select>
+			<label for="destination"> Destination </label>
+			<select id="destination" name="destination">
+				<option value="JFK" selected>JFK</option>
+				<option value="LAX">LAX</option>
+				<option value="SFO">SFO</option>
+				<option value="ORD">ORD</option>
+				<option value="DFW">DFW</option>
+				<option value="MIA">MIA</option>
+			</select>
 
-      <label for="departure">Departure Date</label>
-      <input
-        type="date"
-        id="departure"
-        name="departure"
-        value="2024-12-01"
-        min="2024-12-01"
-        max="2024-12-31"
-      />
+			<label for="departure">Departure Date</label>
+			<input
+				type="date"
+				id="departure"
+				name="departure"
+				value="2024-12-01"
+				min="2024-12-01"
+				max="2024-12-31"
+			/>
 
-      <label for="return">Return Date</label>
-      <input
-        type="date"
-        id="return"
-        name="return"
-        value="2024-12-07"
-        min="2024-12-02"
-        max="2024-12-31"
-      />
-      <button
-        onclick="window.location.href = '/results';"
-        type="submit"
-      >
-        Search
-      </button>
-    </form>
-  </body>
+			<label for="return">Return Date</label>
+			<input
+				type="date"
+				id="return"
+				name="return"
+				value="2024-12-07"
+				min="2024-12-02"
+				max="2024-12-31"
+			/>
+			<button onclick="window.location.href = '/results';" type="submit">
+				Search
+			</button>
+		</form>
+
+		<div>
+			<h2>Flight Deals:</h2>
+
+			<ul>
+				{% for flight in discounted_flights %}
+				<li style="margin-bottom: 20px">
+					Flight from {{ flight.origin }} to {{ flight.destination }} with {{
+					flight.airline }} on {{ flight.originDate }}.<br />
+					Original Price: ${{ flight.price }}<br />
+					Discount: {{ flight.discount }}%<br />
+					Discounted Price: ${{ '{:.2f}'.format(flight.price * (1 -
+					flight.discount / 100)) }}
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</body>
 </html>
 
 <script>
-    document.getElementById('departure').addEventListener('change', function () {
-    departureDate = new Date(this.value)
-    returnDateInput = document.getElementById('return')
+	document.getElementById("departure").addEventListener("change", function () {
+		departureDate = new Date(this.value);
+		returnDateInput = document.getElementById("return");
 
-    minReturnDate = new Date(departureDate)
-    minReturnDate.setDate(minReturnDate.getDate() + 1)
-    returnDateInput.min = minReturnDate.toISOString().split('T')[0]
+		minReturnDate = new Date(departureDate);
+		minReturnDate.setDate(minReturnDate.getDate() + 1);
+		returnDateInput.min = minReturnDate.toISOString().split("T")[0];
 
-    if (new Date(returnDateInput.value) < minReturnDate) {
-      returnDateInput.value = minReturnDate.toISOString().split('T')[0]
-    }
-  })
+		if (new Date(returnDateInput.value) < minReturnDate) {
+			returnDateInput.value = minReturnDate.toISOString().split("T")[0];
+		}
+	});
 </script>

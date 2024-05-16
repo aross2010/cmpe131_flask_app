@@ -60,11 +60,13 @@ def generateFlights():
         airline = random.choice(airlines)
         
         price = random.randint(100, 500)
+
+        discount = random.choice([None, round(random.uniform(5, 30), 2)])
         
         flight = Flight(origin=origin, destination=destination,
                         takeoff=takeoff, landing=landing,
                         originDate=origin_date, destinationDate=destination_date,
-                        model=model, airline=airline, price=price)
+                        model=model, airline=airline, price=price, discount=discount)
         flights.append(flight)
     
     return flights
