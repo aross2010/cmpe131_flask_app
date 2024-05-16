@@ -8,37 +8,37 @@ This is a simple Flask application that provides a flight book interface where u
 
 To run this application, you will need to have Python installed on your computer. You can download Python from the official website: https://www.python.org/. Once you have Python installed, you can follow these steps to run the application:
 
-1. Clone the repository to your local machine:
+### 1. Clone the repository to your local machine:
 
 ```
 git clone https://github.com/aross2010/cmpe131_flask_app.git
 ```
 
-2. Navigate to the project directory:
+### 2. Navigate to the project directory:
 
 ```
 cd cmpe131_flask_app
 ```
 
-3. Create a virtual environment:
+### 3. Create a virtual environment:
 
 ```
 python3 -m venv venv
 ```
 
-4. Activate the virtual environment:
+### 4. Activate the virtual environment:
 
 ```
 source venv/bin/activate
 ```
 
-5. Install the required Python packages:
+### 5. Install the required Python packages:
 
 ```
 pip install -r requirements.txt
 ```
 
-6. Set Up the Database
+### 6. Set Up the Database
 
 Run the seeds.py script to populate the database with initial data:
 
@@ -46,10 +46,12 @@ Run the seeds.py script to populate the database with initial data:
 python seeds.py
 ```
 
-7. Run the application:
+### 7. Run the application:
 
 ```
 flask run
 ```
 
-8. Open a web browser and go to http://localhost:5000 to view the application.
+### 8. View the application.
+
+Open a web browser and go to http://localhost:5000
