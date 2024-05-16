@@ -1,19 +1,6 @@
-# WingMan
+# WingMan ✈️
 
-CMPE 131 Group Project
-
-## Team Members
-
-| name           | SJSU ID   | SJSU Email              | Github                                              |
-| -------------- | --------- | ----------------------- | --------------------------------------------------- |
-| Jordan Jimenez | 017511767 | jordan.jimenez@sjsu.edu | [Jordan-Jimenez](https://github.com/Jordan-Jimenez) |
-| Alex Ross      | 016812393 | alex.ross@sjsu.edu      | [aross2010](https://github.com/aross2010)           |
-| Zhirong Chen   | 017274920 | zhirong.chen@sjsu.edu   | [zchen2003](https://github.com/zchen2003)           |
-| Lyxa Tang      | 017541901 | lyxa.tang@sjsu.edu      | [lyxa123](https://github.com/lyxa123)               |
-
-## Description
-
-This is a simple Flask application that provides a flight book interface where users can book flights. The application allows users to search for flights by entering the departure and destination cities, as well as the departure date. The application will then display a list of available flights that match the search criteria.
+WingMan is a simple Flask application that provides a flight booking interface where users can search and book flights by entering the departure and destination cities, as well as the departure date. The application will then display a list of available flights that match the search criteria where users can see extensive information about each flight, including the flight number, departure and arrival times, aircraft model, and the price. Once booked the user will be able to see their booked flights and live updates on the flight information as well as edit or cancel the booking if needed.
 
 ## Prerequisites
 
@@ -98,3 +85,12 @@ flask run
 ### 7. View the application.
 
 Open a web browser and go to http://127.0.0.1:5000/ or http://localhost:5000
+
+## Team Members
+
+| name           | SJSU ID   | SJSU Email              | Github                                              |
+| -------------- | --------- | ----------------------- | --------------------------------------------------- |
+| Jordan Jimenez | 017511767 | jordan.jimenez@sjsu.edu | [Jordan-Jimenez](https://github.com/Jordan-Jimenez) |
+| Alex Ross      | 016812393 | alex.ross@sjsu.edu      | [aross2010](https://github.com/aross2010)           |
+| Zhirong Chen   | 017274920 | zhirong.chen@sjsu.edu   | [zchen2003](https://github.com/zchen2003)           |
+| Lyxa Tang      | 017541901 | lyxa.tang@sjsu.edu      | [lyxa123](https://github.com/lyxa123)               |
