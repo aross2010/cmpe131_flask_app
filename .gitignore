@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+# Ignore the SQLite database file
+app/app.db
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Database files
+*.db
+
+# Environment variables
+.env
+
+# IDE and editor configurations
+.vscode/
+.idea/
+
+# Logs
+*.log
