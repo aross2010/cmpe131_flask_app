@@ -1,9 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Search Results</title>
+    <title>Results</title>
   </head>
   <body>
-    <h1>Results</h1>
+    <h1>Results for Trip from {{origin}} to {{destination}}</h1>
+    <h3>
+      {{departure}} to {{return_date}}
+    </h3>
+    <br></br>
+    <ul>
+      {% for flight in flights %}
+        <h3>
+          {{flight.airline}} - ${{flight.price}}
+        </h3>
+        <ul>
+          {% for model in flight.models %}
+           <li>{{model}}</li>
+          {% endfor %}
+        </ul>
+        <h5>
+          {{origin}} to {{destination}}
+        </h5>
+        <p>
+          {{flight.originTakeoff}} to {{flight.originLanding}}
+        </p>
+        <p>
+          {{flight.model[0]}}
+        </p>
+        <h5>
+          {{destination}} to {{origin}}
+        </h5>
+        <p>
+          {{flight.returnTakeoff}} to {{flight.returnLanding}}
+        </p>
+        <p>
+          {{flight.model[1]}}
+        </p>
+        <br/>
+        
+      {% endfor %}
+    </ul>
   </body>
 </html>
