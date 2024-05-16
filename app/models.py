@@ -1,4 +1,6 @@
 from app import db
+from sqlalchemy import Numeric
+
 
 class Flight(db.Model):
         origin = db.Column(db.String(50), nullable=False)
@@ -11,4 +13,6 @@ class Flight(db.Model):
         price = db.Column(db.Integer)
         airline = db.Column(db.String(50), nullable=False)
         id = db.Column(db.Integer, primary_key=True)
+
+        class_type = db.Column(db.String(50)) # added class_type ========================================
 
