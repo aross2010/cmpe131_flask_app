@@ -4,10 +4,17 @@ from flask import redirect
 from app import app
 from app.models import Flight
 
+def parse_departure(departure_str):
+    from datetime import datetime
+    return datetime.strptime(departure_str, '%H:%M:%S').timestamp()
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    all_airline = [record.airline for record in Flight.query.filter().all()]
+    all_airline = list(set(all_airline))
+
+    return render_template('home.html', all_airline=all_airline)
+
 
 @app.route('/results')
 def results(): 
@@ -16,9 +23,12 @@ def results():
     destination = request.args.get('destination')
     departure = request.args.get('departure')
     return_date = request.args.get('return')
-    
-    departure_flights = Flight.query.filter_by(origin=origin, destination=destination, originDate=departure).all()
-    return_flights = Flight.query.filter_by(origin=destination, destination=origin, originDate=return_date).all()
+    airline = request.args.get('airline')
+    price_sort = request.args.get('price_sort')
+    time_sort = request.args.get('time_sort')
+
+    departure_flights = Flight.query.filter_by(origin=origin, destination=destination, originDate=departure,airline=airline).all()
+    return_flights = Flight.query.filter_by(origin=destination, destination=origin, originDate=return_date,airline=airline).all()
 
     departure_flights_data = [flight.__dict__ for flight in departure_flights]
     return_flights_data = [flight.__dict__ for flight in return_flights]
@@ -42,6 +52,17 @@ def results():
 
     print(len(paired_flight_data_list))
         
-
+    if price_sort:
+        if price_sort == "price":
+            paired_flight_data_list = sorted(paired_flight_data_list, key=lambda x: (x['price']))
+        else:
+            paired_flight_data_list = sorted(paired_flight_data_list, key=lambda x: (-x['price']))
+    else:
+        if time_sort == "time":
+            paired_flight_data_list = sorted(paired_flight_data_list,
+                                             key=lambda x: (parse_departure(x['originTakeoff'])))
+        else:
+            paired_flight_data_list = sorted(paired_flight_data_list,
+                                             key=lambda x: (-parse_departure(x['originTakeoff'])))
     return render_template('results.html', flights=paired_flight_data_list, origin=origin, destination=destination, departure=departure, return_date=return_date)
 
