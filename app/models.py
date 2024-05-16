@@ -14,3 +14,5 @@ class Flight(db.Model):
         airline = db.Column(db.String(50), nullable=False)
         id = db.Column(db.Integer, primary_key=True)
 
+        class_type = db.Column(db.String(50))
+

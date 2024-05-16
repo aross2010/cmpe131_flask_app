@@ -37,13 +37,20 @@ airport_distances = {
     ('DFW', 'MIA'): 2,
 }
 
+
 # generate 10,000 random flights
 def generateFlights():
     models = ['Boeing 747', 'Airbus A320', 'Boeing 777']
     airlines = ['Delta', 'United', 'JetBlue', 'Southwest']
 
+    price_thresholds = {
+        'Economy': (100, 299),
+        'Business': (300, 399),
+        'First Class': (400, 500)
+    }
+
     # clear existing flights
-    Flight.query.delete()
+    #Flight.query.delete()
 
     flights = []
     for _ in range(20000):
@@ -61,11 +68,20 @@ def generateFlights():
         
         price = random.randint(100, 500)
 
+        class_type = None
+        for class_option, (low, high) in price_thresholds.items():
+            if low <= price <= high:
+                    class_type = class_option
+                    break
+        
+        if not class_type:
+            class_type = 'Economy'  # Fallback, theoretically unnecessary with current settings
         
         flight = Flight(origin=origin, destination=destination,
                         takeoff=takeoff, landing=landing,
                         originDate=origin_date, destinationDate=destination_date,
-                        model=model, airline=airline, price=price)
+                        model=model, airline=airline, price=price, class_type = class_type)
+        
         flights.append(flight)
     
     return flights

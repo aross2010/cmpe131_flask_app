@@ -34,6 +34,7 @@ def results():
                     'price': departure_flight.price + return_flight.price,
                     'airline': departure_flight.airline,
                     'model': [departure_flight.model, return_flight.model],
+                    'class_type': departure_flight.class_type,
                     'originTakeoff': departure_flight.takeoff.strftime('%H:%M:%S'),
                     'originLanding': departure_flight.landing.strftime('%H:%M:%S'),
                     'returnTakeoff': return_flight.takeoff.strftime('%H:%M:%S'),
