@@ -47,6 +47,8 @@ source venv/bin/activate
 
 </details>
 
+Or:
+
 <details>
 <summary><strong>On Windows</strong></summary>
 
