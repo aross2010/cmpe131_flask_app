@@ -33,7 +33,8 @@ cd cmpe131_flask_app
 
 ### 3. Create and Activate a Virtual Environment
 
-On macOS/Linux
+<details>
+<summary><strong>On macOS/Linux</strong></summary>
 
 #### 1. Create a virtual environment:
 
@@ -47,7 +48,10 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-On Windows
+</details>
+
+<details>
+<summary><strong>On Windows</strong></summary>
 
 #### 1. Create a virtual environment:
 
@@ -60,6 +64,8 @@ python -m venv venv
 ```
 venv\Scripts\activate
 ```
+
+</details>
 
 ### 4. Install the required Python packages:
 
