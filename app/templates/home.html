@@ -26,6 +26,13 @@
 				<option value="MIA">MIA</option>
 			</select>
 
+			<label for="airline"> Airline </label>
+			<select id="airline" name="airline">
+				{% for airline in all_airline%}
+				<option value="{{airline}}">{{airline}}</option>
+				{% endfor %}
+			</select>
+
 			<label for="departure">Departure Date</label>
 			<input
 				type="date"

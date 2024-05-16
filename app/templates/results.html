@@ -1,49 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>WingMan: Flight Results</title>
-    <style>
-        body { font-family: 'Times New Roman', Times, serif, sans-serif; line-height: 1.6; }
-        .container { width: 80%; margin: auto; padding: 20px; }
-        h1, h2, h3 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; padding: 10px; background: #f4f4f4; border-left: 5px solid #007BFF; }
-        .flight-heading { margin-top: 20px; }
-        .flight-details { margin-left: 20px; }
-        .price { color: green; font-weight: bold; }
-    </style>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>WingMan: Flight Results</title>
+		<style>
+			body {
+				font-family: "Times New Roman", Times, serif, sans-serif;
+				line-height: 1.6;
+			}
+			.container {
+				width: 80%;
+				margin: auto;
+				padding: 20px;
+			}
+			h1,
+			h2,
+			h3 {
+				color: #333;
+			}
+			ul {
+				list-style-type: none;
+				padding: 0;
+			}
+			li {
+				margin-bottom: 10px;
+				padding: 10px;
+				background: #f4f4f4;
+				border-left: 5px solid #007bff;
+			}
+			.flight-heading {
+				margin-top: 20px;
+			}
+			.flight-details {
+				margin-left: 20px;
+			}
+			.price {
+				color: green;
+				font-weight: bold;
+			}
+		</style>
+	</head>
 
-<body>
-        <h1>WingMan</h1>
-        
-        <h2>Results for Trip from {{origin}} to {{destination}}</h2>
-        <h3>{{departure}} to {{return_date}}</h3>
-        
-      <div class="flight-info">
-      <ul>
-      {% for flight in flights %}
-        <!-- Example of one flight entry -->
-            <h3 class="flight-heading">{{flight.airline}} - <span class="price">${{flight.price}}</span></h3>
-            <ul class="flight-details">
-                <li>Outbound Flight: {{origin}} to {{destination}} <br>
-                    Departure: {{flight.originTakeoff}} <br>
-                    Arrival: {{flight.originLanding}} <br>
-                    Aircraft: {{flight.model[0]}} <br>
-                    Class: {{flight.class_type}}
-                </li>
-                <li>Inbound Flight: {{destination}} to {{origin}} <br>
-                    Departure: {{flight.returnTakeoff}} <br>
-                    Arrival: {{flight.returnLanding}} <br>
-                    Aircraft: {{flight.model[1]}} <br>
-                    Class: {{flight.class_type}}
-                </li>
-            </ul>
-        </div>
-        <!-- Repeat the above div for each flight as needed -->
-    </div>
-          {% endfor %}
-    </ul>
-</body>
+	<body>
+		<h1>WingMan</h1>
+
+		<h2>Results for Trip from {{origin}} to {{destination}}</h2>
+		<h3>{{departure}} to {{return_date}}</h3>
+
+		<button id="sort-by-price">
+			Sort by Price <span class="arrow">&#x21C5;</span>
+		</button>
+		<button id="sort-by-time">
+			Sort by Time <span class="arrow">&#x21C5;</span>
+		</button>
+
+		<div class="flight-info">
+			<ul>
+				{% for flight in flights %}
+				<!-- Example of one flight entry -->
+				<h3 class="flight-heading">
+					{{flight.airline}} - <span class="price">${{flight.price}}</span>
+				</h3>
+				<ul class="flight-details">
+					<li>
+						Outbound Flight: {{origin}} to {{destination}} <br />
+						Departure: {{flight.originTakeoff}} <br />
+						Arrival: {{flight.originLanding}} <br />
+						Aircraft: {{flight.model[0]}} <br />
+						Class: {{flight.class_type}}
+					</li>
+					<li>
+						Inbound Flight: {{destination}} to {{origin}} <br />
+						Departure: {{flight.returnTakeoff}} <br />
+						Arrival: {{flight.returnLanding}} <br />
+						Aircraft: {{flight.model[1]}} <br />
+						Class: {{flight.class_type}}
+					</li>
+				</ul>
+				<!-- Repeat the above div for each flight as needed -->
+				{% endfor %}
+			</ul>
+		</div>
+	</body>
 </html>
+<script>
+	var currentParams = new URLSearchParams(window.location.search);
+
+	document
+		.getElementById("sort-by-price")
+		.addEventListener("click", function () {
+			currentParams.delete("time_sort");
+			if (currentParams.has("price_sort")) {
+				var currentSort = currentParams.get("price_sort");
+				var newSort = currentSort === "price" ? "-price" : "price";
+				currentParams.set("price_sort", newSort);
+			} else {
+				currentParams.append("price_sort", "price");
+			}
+			window.location.search = currentParams.toString();
+		});
+
+	document
+		.getElementById("sort-by-time")
+		.addEventListener("click", function () {
+			currentParams.delete("price_sort");
+			if (currentParams.has("time_sort")) {
+				var currentSort = currentParams.get("time_sort");
+				var newSort = currentSort === "time" ? "-time" : "time";
+				currentParams.set("time_sort", newSort);
+			} else {
+				currentParams.append("time_sort", "time");
+			}
+			window.location.search = currentParams.toString();
+		});
+</script>
